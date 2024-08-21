@@ -7,13 +7,12 @@ import (
 )
 
 func videoHandler(w http.ResponseWriter, r *http.Request) {
-    videoFile, err := os.Open("videos/video.mp4")
+    videoFile, err := os.Open("videos/test3.mp4")
     if err != nil {
         http.Error(w, "Video not found.", http.StatusNotFound)
         return
     }
     defer videoFile.Close()
-
     // Set appropriate cache-control headers to prevent browser caching
     w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
     w.Header().Set("Pragma", "no-cache")
