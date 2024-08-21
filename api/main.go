@@ -43,5 +43,5 @@ func videoHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     http.HandleFunc("/video", videoHandler)
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe("0.0.0.0:8080", nil)
 }
